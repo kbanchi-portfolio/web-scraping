@@ -1,8 +1,8 @@
 **Table of Contents**
 
 - [web-scraping](#web-scraping)
-  - [About The Project](#About The Project)
-  - [Getting Start](#Getting Start)
+  - [About The Project](#About-The-Project)
+  - [Getting Start](#Getting-Start)
   - [Usage](#Usage)
   - [Note](#Note)
   - [Contact](#Contact)
