@@ -13,53 +13,58 @@ import sys
 from bs4 import BeautifulSoup
 import requests
 
+BASE_URL = "https://zeroichi.media"
+
 
 def main():
-    """ Web scraping main function.
+    """Web scraping main function.
     Scraping zeroichi.media page and print titles of article in target category.
     :return:
     """
     # read all categories from list file
-    all_categories_list = './zeroichi_media.list'
+    all_categories_list = "./zeroichi_media.list"
     all_categories = []
-    with open(all_categories_list, 'r') as f:
-        all_categories = f.read().split('\n')
+    with open(all_categories_list, "r") as f:
+        all_categories = f.read().strip().split("\n")
 
     # check if target category in all categories and set target category
-    target_category = ''
+    target_category = ""
     try:
         target_category = sys.argv[1]
         if not target_category in all_categories:
-            print('Please specify target category from the following.')
-            print('-- target categories --')
+            print("Please specify target category from the following.")
+            print("-- target categories --")
             for category in all_categories:
-                print(category, end=' / ')
+                print(category, end=" / ")
             exit()
     except IndexError:
-        print('Please specify target category argument from the following.')
-        print('-- target categories --')
+        print("Please specify target category argument from the following.")
+        print("-- target categories --")
         for category in all_categories:
-            print(category, end=' / ')
+            print(category, end=" / ")
         exit()
 
     # set scraping url
-    BASE_URL = 'https://zeroichi.media'
-    url = BASE_URL + '/category/' + target_category
+    url = f"{BASE_URL}/category/{target_category}"
 
     # open url and get response
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
+    except Exception:
+        print("Occurred any connection error.")
+        exit()
     text = response.text
 
     # parse text to html
-    soup = BeautifulSoup(text, 'html.parser')
+    soup = BeautifulSoup(text, "html.parser")
 
     # get and print archive post list
-    archives = soup.select('.archive-post')
+    archives = soup.select(".archive-post")
     for archive in archives:
-        published = archive.find('time', class_='published')
-        title = archive.find('h2', class_='entry-title')
-        print(published.text + " : " + title.text)
+        published = archive.find("time", class_="published")
+        title = archive.find("h2", class_="entry-title")
+        print(f"{published.text} : {title.text}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
