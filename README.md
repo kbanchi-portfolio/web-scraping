@@ -60,10 +60,13 @@ Please refer to the help documentation how to use each module.
 
 [![Beautiful Soup](http://img.youtube.com/vi/GWZ8onriR6E/maxresdefault.jpg)](https://www.youtube.com/watch?v=GWZ8onriR6E)
 
-
 #### Flickr API
 
+[![Flickr API](http://img.youtube.com/vi/DtAyN53I1pM/maxresdefault.jpg)](https://www.youtube.com/watch?v=DtAyN53I1pM)
+
 #### Selenium
+
+[![Selenium](http://img.youtube.com/vi/8g91aqolHP8/maxresdefault.jpg)](https://www.youtube.com/watch?v=8g91aqolHP8)
 
 ## Contact
 
