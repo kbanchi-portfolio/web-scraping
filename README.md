@@ -58,7 +58,7 @@ Please refer to the help documentation how to use each module.
 
 #### Beautiful Soup
 
-[!['Beautiful Soup']('http://img.youtube.com/vi/GWZ8onriR6E/default.jpg')]('https://www.youtube.com/embed/GWZ8onriR6E?si=moeYqI1VAdbAw5-3')
+[!['Beautiful Soup']('http://img.youtube.com/vi/GWZ8onriR6E/default.jpg')]('https://www.youtube.com/watch?v=GWZ8onriR6E')
 
 
 #### Flickr API
